@@ -1,20 +1,21 @@
 package ru.netology.posters;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import ru.netology.domain.Films;
 
 public class FilmsTest {
-    Films film1 = new Films(12331, "BloodShoot", 2019,"netology.ru","Action");
-    Films film2 = new Films(21212, "Onward", 2019,"netology.ru","fantasy");
-    Films film3 = new Films(213231, "Отель Белград", 2020, "netology.ru","comedy");
-    Films film4 = new Films(6578987, "The Gentlemen", 2019,"netology.ru", "Action");
-    Films film5 = new Films(23423,"The Invisible Man", 2020, "netology.ru", "Fantasy, Thriller");
+    Films film1 = new Films(12331, "BloodShoot", 2019, "netology.ru", "Action");
+    Films film2 = new Films(21212, "Onward", 2019, "netology.ru", "fantasy");
+    Films film3 = new Films(213231, "Отель Белград", 2020, "netology.ru", "comedy");
+    Films film4 = new Films(6578987, "The Gentlemen", 2019, "netology.ru", "Action");
+    Films film5 = new Films(23423, "The Invisible Man", 2020, "netology.ru", "Fantasy, Thriller");
     Films film6 = new Films(9878457, "Throlls World Tour", 2020, "netology.ru", "Animation");
     Films film7 = new Films(565749, "Номер один", 2020, "netology.ru", "Comedy");
 
 
     @Test
-    public void shouldFindAll(){
+    public void shouldFindAll() {
         FilmsManager manager = new FilmsManager();
         manager.addFilm(film1);
         manager.addFilm(film2);
@@ -27,8 +28,9 @@ public class FilmsTest {
         Films[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void shouldFindLast5(){
+    public void shouldFindLast5() {
         FilmsManager manager = new FilmsManager();
         manager.addFilm(film1);
         manager.addFilm(film2);
@@ -41,6 +43,7 @@ public class FilmsTest {
         Films[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindLast7() {
         FilmsManager manager = new FilmsManager(7);
