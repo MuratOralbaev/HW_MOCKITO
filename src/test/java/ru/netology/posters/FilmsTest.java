@@ -28,6 +28,7 @@ public class FilmsTest {
         Films[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindNone() {
         FilmsManager manager = new FilmsManager();
@@ -65,8 +66,9 @@ public class FilmsTest {
         Films[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void shouldFindLast0(){
+    public void shouldFindLast0() {
         FilmsManager manager = new FilmsManager(0);
         Films[] expected = {};
         Films[] actual = manager.findLast();
