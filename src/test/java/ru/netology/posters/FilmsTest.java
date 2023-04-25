@@ -28,6 +28,13 @@ public class FilmsTest {
         Films[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void shouldFindNone() {
+        FilmsManager manager = new FilmsManager();
+        Films[] expected = {};
+        Films[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
     @Test
     public void shouldFindLast5() {
@@ -55,6 +62,13 @@ public class FilmsTest {
         manager.addFilm(film6);
         manager.addFilm(film7);
         Films[] expected = {film7, film6, film5, film4, film3, film2, film1};
+        Films[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldFindLast0(){
+        FilmsManager manager = new FilmsManager(0);
+        Films[] expected = {};
         Films[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
